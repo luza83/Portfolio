@@ -14,9 +14,6 @@ import {
 import { SiVuedotjs, SiDotnet, SiPython } from "react-icons/si";
 import { FaDatabase } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
-import biblioTrack from "/assets/biblioTrack.png";
-import hootsChallenge from "/assets/hootsChallenge.png";
-import treasureHunt from "/assets/treasureHunt.png";
 
 const PROJECTS = [
   {
@@ -25,7 +22,7 @@ const PROJECTS = [
     description:
       "Full-stack library management system that allows users to browse, reserve, and manage books online with role-based access for admins and visitors. Includes authentication, search, and reservation workflow.",
     tech: [".NET", "Vue.js", "SQL Server", "Pinia"],
-    image: biblioTrack,
+    image: `${import.meta.env.BASE_URL}assets/biblioTrack.png`,
     link: "https://biblio-track-project.vercel.app",
     credentials: (
       <>
@@ -42,7 +39,7 @@ const PROJECTS = [
     description:
       "Educational web application that helps children practice math and nature science through interactive quizzes. Includes user authentication, progress tracking, difficulty levels, and API-generated questions.",
     tech: ["Flask", "PostgreSQL", "Python", "SQLAlchemy", "REST API"],
-    image: hootsChallenge,
+    image: `${import.meta.env.BASE_URL}assets/hootsChallenge.png`,
     link: "https://hootschallenge.onrender.com",
     credentials: "",
   },
@@ -52,7 +49,7 @@ const PROJECTS = [
     description:
       "Augmented reality hiking game that transforms nature trails into an interactive treasure hunt. Users solve riddles and follow AR clues to track a fictional environmental monster in real-world locations.",
     tech: ["JavaScript", "A-Frame", "Web AR", "HTML/CSS"],
-    image: treasureHunt,
+    image: `${import.meta.env.BASE_URL}assets/treasureHunt.png`,
     link: "https://luza83.github.io/AR-TreasureHunt/",
     credentials: "",
   },
@@ -470,7 +467,7 @@ function Contact() {
           </p>
 
           <a
-            href="mailto:luzaah@icloud.com?subject=Hello&body=Hi there!"
+            href="mailto:luzaah@icloud.com"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-all hover:scale-105 duration-300 mb-16"
           >
             <Mail size={20} />
