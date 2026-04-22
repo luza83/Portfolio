@@ -14,7 +14,9 @@ import {
 import { SiVuedotjs, SiDotnet, SiPython } from "react-icons/si";
 import { FaDatabase } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
-
+import biblioTrack from "./assets/biblioTrack.png";
+import hootsChallenge from "./assets/hootsChallenge.png";
+import treasureHunt from "./assets/treasureHunt.png";
 const PROJECTS = [
   {
     id: 1,
@@ -22,7 +24,7 @@ const PROJECTS = [
     description:
       "Full-stack library management system that allows users to browse, reserve, and manage books online with role-based access for admins and visitors. Includes authentication, search, and reservation workflow.",
     tech: [".NET", "Vue.js", "SQL Server", "Pinia"],
-    image: `${import.meta.env.BASE_URL}assets/biblioTrack.png`,
+    image: biblioTrack,
     link: "https://biblio-track-project.vercel.app",
     credentials: (
       <>
@@ -39,7 +41,7 @@ const PROJECTS = [
     description:
       "Educational web application that helps children practice math and nature science through interactive quizzes. Includes user authentication, progress tracking, difficulty levels, and API-generated questions.",
     tech: ["Flask", "PostgreSQL", "Python", "SQLAlchemy", "REST API"],
-    image: `${import.meta.env.BASE_URL}assets/hootsChallenge.png`,
+    image: hootsChallenge,
     link: "https://hootschallenge.onrender.com",
     credentials: "",
   },
@@ -49,7 +51,7 @@ const PROJECTS = [
     description:
       "Augmented reality hiking game that transforms nature trails into an interactive treasure hunt. Users solve riddles and follow AR clues to track a fictional environmental monster in real-world locations.",
     tech: ["JavaScript", "A-Frame", "Web AR", "HTML/CSS"],
-    image: `${import.meta.env.BASE_URL}assets/treasureHunt.png`,
+    image: treasureHunt,
     link: "https://luza83.github.io/AR-TreasureHunt/",
     credentials: "",
   },
