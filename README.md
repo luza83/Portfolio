@@ -4,7 +4,7 @@ This is my personal developer portfolio built with React and Vite. It showcases 
 
 🚀 Live Demo
 
-👉 https://yourusername.github.io/Portfolio/
+👉 https://luza83.github.io/Portfolio/
 
 🛠️ Tech Stack
 React
