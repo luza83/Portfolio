@@ -32,6 +32,8 @@ const PROJECTS = [
         Admin: demoAdmin@domain.com / Admin123!
         <br />
         Visitor: demoUser@domain.com / Guest123!
+        <br />
+        Note: The demo may take a moment to load as it wakes up from sleep mode.
       </>
     ),
   },
@@ -471,11 +473,11 @@ function Contact() {
           <a
             href="mailto:luzaah@icloud.com"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-all hover:scale-105 duration-300 mb-16"
+            title="luzaah@icloud.com"
           >
             <Mail size={20} />
             Say Hello
           </a>
-
           <div className="flex justify-center gap-6">
             <a
               href="https://github.com/luza83"
