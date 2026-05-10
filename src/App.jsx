@@ -15,8 +15,11 @@ import { SiVuedotjs, SiDotnet, SiPython } from "react-icons/si";
 import { FaDatabase } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
 import biblioTrack from "./assets/biblioTrack.png";
+import biblioTrack1 from "./assets/biblioTrack1.png";
 import hootsChallenge from "./assets/hootsChallenge.png";
+import hootsChallenge1 from "./assets/hootsChallenge1.png";
 import treasureHunt from "./assets/treasureHunt.png";
+import treasureHunt1 from "./assets/treasureHunt1.png";
 const PROJECTS = [
   {
     id: 1,
@@ -24,7 +27,8 @@ const PROJECTS = [
     description:
       "Full-stack library management system that allows users to browse, reserve, and manage books online with role-based access for admins and visitors. Includes authentication, search, and reservation workflow.",
     tech: [".NET", "Vue.js", "SQL Server", "Pinia"],
-    image: biblioTrack,
+    mainImage: biblioTrack,
+    secondaryImage: biblioTrack1,
     link: "https://biblio-track-project.vercel.app",
     credentials: (
       <>
@@ -43,7 +47,8 @@ const PROJECTS = [
     description:
       "Educational web application that helps children practice math and nature science through interactive quizzes. Includes user authentication, progress tracking, difficulty levels, and API-generated questions.",
     tech: ["Flask", "PostgreSQL", "Python", "SQLAlchemy", "REST API"],
-    image: hootsChallenge,
+    mainImage: hootsChallenge,
+    secondaryImage: hootsChallenge1,
     link: "https://hootschallenge.onrender.com",
     credentials: "",
   },
@@ -53,7 +58,8 @@ const PROJECTS = [
     description:
       "Augmented reality hiking game that transforms nature trails into an interactive treasure hunt. Users solve riddles and follow AR clues to track a fictional environmental monster in real-world locations.",
     tech: ["JavaScript", "A-Frame", "Web AR", "HTML/CSS"],
-    image: treasureHunt,
+    mainImage: treasureHunt,
+    secondaryImage: treasureHunt1,
     link: "https://luza83.github.io/AR-TreasureHunt/",
     credentials: "",
   },
@@ -348,11 +354,17 @@ function Projects() {
             >
               <div className="w-full md:w-1/2 group">
                 <div className="relative overflow-hidden rounded-2xl glass-panel aspect-video">
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay" />
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 mix-blend-overlay" />
                   <img
-                    src={project.image}
+                    src={project.mainImage}
                     alt={project.title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+                  />
+
+                  <img
+                    src={project.secondaryImage}
+                    alt={`${project.title} preview`}
+                    className="absolute inset-0 w-full h-full object-fit transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                   />
                 </div>
               </div>
