@@ -106,27 +106,16 @@ Error generating stack: `+s.message+`
                       mix-blend-overlay
                       transition-opacity duration-500
                       group-hover:opacity-100
-                    `}),x.jsx("img",{src:e.mainImage,alt:e.title,loading:"lazy",className:`
-                      absolute inset-0 h-full w-full
-                      rounded-2xl object-cover
-                      opacity-100
-                      transition-opacity duration-500
-                      group-hover:opacity-0
-
-                      transform-gpu
-                      will-change-opacity
-                      [backface-visibility:hidden]
-                    `}),x.jsx("img",{src:e.secondaryImage,alt:`${e.title} preview`,loading:"lazy",className:`
-                      absolute inset-0 h-full w-full
-                      rounded-2xl object-cover
-                      opacity-0
-                      transition-opacity duration-500
-                      group-hover:opacity-100
-
-                      transform-gpu
-                      will-change-opacity
-                      [backface-visibility:hidden]
-                    `})]})}),x.jsxs("div",{className:"w-full space-y-6 md:w-1/2",children:[x.jsx("div",{className:"flex flex-wrap gap-3",children:e.tech.map(n=>x.jsx("span",{className:`
+                    `}),x.jsx("img",{src:e.mainImage,alt:e.title,loading:"lazy",decoding:"async",className:`
+                    absolute inset-0 h-full w-full object-cover
+                    transition-transform duration-500 ease-out
+                    group-hover:scale-105
+                  `}),x.jsx("img",{src:e.secondaryImage,alt:`${e.title} preview`,loading:"lazy",decoding:"async",className:`
+                    absolute inset-0 h-full w-full object-cover
+                    translate-y-full
+                    transition-transform duration-500 ease-out
+                    group-hover:translate-y-0
+                  `})]})}),x.jsxs("div",{className:"w-full space-y-6 md:w-1/2",children:[x.jsx("div",{className:"flex flex-wrap gap-3",children:e.tech.map(n=>x.jsx("span",{className:`
                         rounded-full border border-secondary/20
                         bg-secondary/10 px-3 py-1
                         text-xs font-medium text-secondary
