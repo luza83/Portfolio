@@ -351,7 +351,6 @@ function Projects() {
                 index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"
               }`}
             >
-              {/* Images */}
               <div className="group w-full md:w-1/2">
                 <div
                   className="
@@ -362,7 +361,6 @@ function Projects() {
                     WebkitMaskImage: "-webkit-radial-gradient(white, black)",
                   }}
                 >
-                  {/* Overlay */}
                   <div
                     className="
                       absolute inset-0 z-20
@@ -378,40 +376,28 @@ function Projects() {
                     src={project.mainImage}
                     alt={project.title}
                     loading="lazy"
+                    decoding="async"
                     className="
-                      absolute inset-0 h-full w-full
-                      rounded-2xl object-cover
-                      opacity-100
-                      transition-opacity duration-500
-                      group-hover:opacity-0
-
-                      transform-gpu
-                      will-change-opacity
-                      [backface-visibility:hidden]
-                    "
+                    absolute inset-0 h-full w-full object-cover
+                    transition-transform duration-500 ease-out
+                    group-hover:scale-105
+                  "
                   />
-
-                  {/* Hover Image */}
                   <img
                     src={project.secondaryImage}
                     alt={`${project.title} preview`}
                     loading="lazy"
+                    decoding="async"
                     className="
-                      absolute inset-0 h-full w-full
-                      rounded-2xl object-cover
-                      opacity-0
-                      transition-opacity duration-500
-                      group-hover:opacity-100
-
-                      transform-gpu
-                      will-change-opacity
-                      [backface-visibility:hidden]
-                    "
+                    absolute inset-0 h-full w-full object-cover
+                    translate-y-full
+                    transition-transform duration-500 ease-out
+                    group-hover:translate-y-0
+                  "
                   />
                 </div>
               </div>
 
-              {/* Content */}
               <div className="w-full space-y-6 md:w-1/2">
                 <div className="flex flex-wrap gap-3">
                   {project.tech.map((t) => (
