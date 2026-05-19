@@ -14,12 +14,12 @@ import {
 import { SiVuedotjs, SiDotnet, SiPython } from "react-icons/si";
 import { FaDatabase } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
-import biblioTrack from "./assets/biblioTrack.png";
-import biblioTrack1 from "./assets/biblioTrack1.png";
-import hootsChallenge from "./assets/hootsChallenge.png";
-import hootsChallenge1 from "./assets/hootsChallenge1.png";
-import treasureHunt from "./assets/treasureHunt.png";
-import treasureHunt1 from "./assets/treasureHunt1.png";
+import biblioTrack from "./assets/biblioTrack.webp";
+import biblioTrack1 from "./assets/biblioTrack1.webp";
+import hootsChallenge from "./assets/hootsChallenge.webp";
+import hootsChallenge1 from "./assets/hootsChallenge1.webp";
+import treasureHunt from "./assets/treasureHunt.webp";
+import treasureHunt1 from "./assets/treasureHunt1.webp";
 const PROJECTS = [
   {
     id: 1,
