@@ -383,16 +383,17 @@ function Projects() {
                     group-hover:scale-105
                   "
                   />
-                  <div
+                  <img
+                    src={project.secondaryImage}
+                    alt={`${project.title} preview`}
+                    loading="lazy"
+                    decoding="async"
                     className="
-                    absolute inset-0 h-full w-full
-                    bg-cover bg-center
-                    opacity-0 transition-opacity duration-300
-                    group-hover:opacity-100
-    "
-                    style={{
-                      backgroundImage: `url(${project.secondaryImage})`,
-                    }}
+                    absolute inset-0 h-full w-full object-cover
+                    translate-y-full
+                    transition-transform duration-500 ease-out
+                    group-hover:translate-y-0
+                  "
                   />
                 </div>
               </div>
