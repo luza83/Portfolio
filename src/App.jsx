@@ -326,16 +326,15 @@ function Skills() {
     </section>
   );
 }
-
 function Projects() {
   return (
-    <section id="projects" className="py-32 relative">
+    <section id="projects" className="relative py-32">
       <div className="container mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-20 text-center text-red-700"
+          className="mb-20 text-center text-4xl font-bold text-red-700 md:text-5xl"
         >
           Selected Works
         </motion.h2>
@@ -348,52 +347,108 @@ function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className={`flex flex-col ${
+              className={`flex flex-col items-center gap-12 ${
                 index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"
-              } gap-12 items-center`}
+              }`}
             >
-              <div className="w-full md:w-1/2 group">
-                <div className="relative overflow-hidden rounded-2xl glass-panel aspect-video">
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 mix-blend-overlay" />
+              {/* Images */}
+              <div className="group w-full md:w-1/2">
+                <div
+                  className="
+                    relative aspect-video overflow-hidden rounded-2xl
+                    glass-panel isolate
+                  "
+                  style={{
+                    WebkitMaskImage: "-webkit-radial-gradient(white, black)",
+                  }}
+                >
+                  {/* Overlay */}
+                  <div
+                    className="
+                      absolute inset-0 z-20
+                      bg-primary/20 opacity-0
+                      mix-blend-overlay
+                      transition-opacity duration-500
+                      group-hover:opacity-100
+                    "
+                  />
+
+                  {/* Main Image */}
                   <img
                     src={project.mainImage}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+                    loading="lazy"
+                    className="
+                      absolute inset-0 h-full w-full
+                      rounded-2xl object-cover
+                      opacity-100
+                      transition-opacity duration-500
+                      group-hover:opacity-0
+
+                      transform-gpu
+                      will-change-opacity
+                      [backface-visibility:hidden]
+                    "
                   />
 
+                  {/* Hover Image */}
                   <img
                     src={project.secondaryImage}
                     alt={`${project.title} preview`}
-                    className="absolute inset-0 w-full h-full object-fit transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+                    loading="lazy"
+                    className="
+                      absolute inset-0 h-full w-full
+                      rounded-2xl object-cover
+                      opacity-0
+                      transition-opacity duration-500
+                      group-hover:opacity-100
+
+                      transform-gpu
+                      will-change-opacity
+                      [backface-visibility:hidden]
+                    "
                   />
                 </div>
               </div>
 
-              <div className="w-full md:w-1/2 space-y-6">
-                <div className="flex gap-3 flex-wrap">
+              {/* Content */}
+              <div className="w-full space-y-6 md:w-1/2">
+                <div className="flex flex-wrap gap-3">
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-secondary/10 text-secondary border border-secondary/20"
+                      className="
+                        rounded-full border border-secondary/20
+                        bg-secondary/10 px-3 py-1
+                        text-xs font-medium text-secondary
+                      "
                     >
                       {t}
                     </span>
                   ))}
                 </div>
+
                 <h3 className="text-3xl font-bold text-red-700">
                   {project.title}
                 </h3>
+
                 <p className="text-lg text-black">{project.description}</p>
+
                 {project.credentials && (
                   <p className="text-sm text-black/80">
                     <strong>Demo Credentials:</strong> {project.credentials}
                   </p>
                 )}
+
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
+                  className="
+                    inline-flex items-center gap-2
+                    font-medium text-primary
+                    transition-colors hover:text-primary/80
+                  "
                 >
                   View Project <ExternalLink size={18} />
                 </a>
