@@ -114,8 +114,8 @@ function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-[20%] left-[20%] w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px] mix-blend-screen" />
-        <div className="absolute bottom-[20%] right-[20%] w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[150px] mix-blend-screen" />
+        <div className="hidden md:block absolute top-[20%] left-[20%] w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px] mix-blend-screen" />
+        <div className="hidden md:block absolute bottom-[20%] right-[20%] w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[150px] mix-blend-screen" />
       </div>
 
       <div className="container relative z-10 mx-auto px-6 flex flex-col items-center text-center">
@@ -365,9 +365,9 @@ function Projects() {
                     className="
                       absolute inset-0 z-20
                       bg-primary/20 opacity-0
-                      mix-blend-overlay
+                      md:mix-blend-overlay
                       transition-opacity duration-500
-                      group-hover:opacity-100
+                      md:group-hover:opacity-100
                     "
                   />
 
@@ -504,7 +504,7 @@ function Experience() {
 function Contact() {
   return (
     <section id="contact" className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 z-0 pointer-events-none hidden md:block">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-t-full bg-primary/10 blur-[100px]" />
       </div>
 
