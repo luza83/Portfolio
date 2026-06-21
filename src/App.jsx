@@ -56,7 +56,7 @@ const PROJECTS = [
     id: 3,
     title: "AR Treasure Hunt",
     description:
-      "Augmented reality hiking game that transforms nature trails into an interactive treasure hunt. Users solve riddles and follow AR clues to track a fictional environmental monster in real-world locations.",
+      "Proof-of-concept AR adventure game that combines geolocation and augmented reality to create an interactive outdoor experience. Players follow a hiking route and collect AR clues along the trail to progress through the adventure. The demo is currently configured for the Stikk Ut trail Retiro in Molde.",
     tech: ["JavaScript", "A-Frame", "Web AR", "HTML/CSS"],
     mainImage: treasureHunt,
     secondaryImage: treasureHunt1,
