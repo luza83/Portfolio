@@ -89,6 +89,41 @@ const EXPERIENCE = [
       "Completed a Bachelor’s degree in IT and Digitalizing. Developed a thesis project: an AR-based outdoor app for kids, focusing on front-end, back-end, and interactive design. Learned to plan, develop, and deliver a complete software project.",
   },
 ];
+
+const COURSES_AND_CERTIFICATIONS = [
+  {
+    title: "IBM Full-Stack JavaScript Developer",
+    provider: "Coursera",
+    completionDate: "2026-08-06",
+    link: "https://coursera.org/share/35482948bc8c01ab018f2ee837d35828",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Express.js",
+      "Git",
+      "GitHub",
+      "NoSQL",
+      "Docker",
+      "Kubernetes",
+      "OpenShift",
+      "Microservices",
+      "Serverless Computing",
+      "CI/CD",
+      "DevOps",
+      "Agile",
+    ],
+  },
+  {
+    title: "C# Intermediate: Classes, Interfaces and OOP",
+    provider: "Udemy",
+    completionDate: "2023-06-23",
+    link: "https://www.udemy.com/certificate/UC-14df9e73-1a98-4d83-bb43-e3b1f95a0d23/",
+    skills: ["C#", "Object-Oriented Programming", "Classes", "Interfaces"],
+  },
+];
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -319,6 +354,76 @@ function Skills() {
               <span className="font-medium text-sm md:text-base">
                 {skill.name}
               </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+function CoursesAndCertifications() {
+  return (
+    <section id="courses" className="py-32">
+      <div className="container mx-auto px-6">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20 text-center text-4xl font-bold text-red-700 md:text-5xl"
+        >
+          Courses & Certifications
+        </motion.h2>
+
+        <div className="space-y-12 max-w-4xl mx-auto">
+          {COURSES_AND_CERTIFICATIONS.map((course, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="relative pl-8 md:pl-0"
+            >
+              <div className="md:grid md:grid-cols-4 gap-8">
+                <div className="md:text-right md:col-span-1 pt-1">
+                  <span className="text-black font-mono font-medium">
+                    {new Date(course.completionDate).toLocaleDateString(
+                      "en-US",
+                      {
+                        year: "numeric",
+                        month: "long",
+                      },
+                    )}
+                  </span>
+                </div>
+                <div className="md:col-span-3 relative mt-2 md:mt-0 glass-panel p-8 rounded-2xl">
+                  <div className="absolute left-[-39px] md:left-[-25px] top-8 w-4 h-4 rounded-full bg-background border-2 border-black z-10" />
+                  {index !== COURSES_AND_CERTIFICATIONS.length - 1 && (
+                    <div className="absolute left-[-32px] md:left-[-18px] top-12 bottom-[-80px] w-0.5 bg-border" />
+                  )}
+                  <h3 className="text-2xl font-bold text-red-700 mb-1">
+                    {course.title}
+                  </h3>
+                  <h4 className="text-lg text-black mb-4">{course.provider}</h4>
+                  <p className="text-black leading-relaxed mb-4">
+                    Skills Learned: {course.skills.join(", ")}
+                  </p>
+                  {course.link && (
+                    <a
+                      href={course.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        inline-flex items-center gap-2
+                        font-medium text-primary
+                        transition-colors hover:text-primary/80
+                      "
+                    >
+                      View Certificate <ExternalLink size={18} />
+                    </a>
+                  )}
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -583,6 +688,9 @@ function Navbar() {
           <a href="#skills" className="hover:text-black transition-colors">
             Skills
           </a>
+          <a href="#courses" className="hover:text-black transition-colors">
+            Courses And Certifications
+          </a>
           <a href="#projects" className="hover:text-black transition-colors">
             Projects
           </a>
@@ -610,6 +718,7 @@ export default function App() {
         <Hero />
         <About />
         <Skills />
+        <CoursesAndCertifications />
         <Projects />
         <Experience />
         <Contact />
