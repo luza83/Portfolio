@@ -41,7 +41,7 @@ const PROJECTS = [
     id: 1,
     title: "Biblio Track",
     description:
-      "Full-stack library management system that allows users to browse, reserve, and manage books online with role-based access for admins and visitors. Includes authentication, search, and reservation workflow.",
+      "An MVP full-stack library management system built to demonstrate practical experience with .NET and Microsoft SQL Server. The application includes authentication, role-based access for administrators and regular users, book management, borrowing and reservation workflows, status management, search, and full CRUD operations. The project was inspired by the type of business systems I've worked with professionally and gave me an opportunity to build a similar solution independently from the ground up.",
     tech: [".NET", "Vue.js", "SQL Server", "Pinia"],
     mainImage: biblioTrack,
     secondaryImage: biblioTrack1,
@@ -61,7 +61,7 @@ const PROJECTS = [
     id: 2,
     title: "Hoots Challenge",
     description:
-      "Educational web application that helps children practice math and nature science through interactive quizzes. Includes user authentication, progress tracking, difficulty levels, and API-generated questions.",
+      "A Flask-based educational quiz app designed to make mathematics and natural science more engaging for children. Originally created as a group project during my studies, I later expanded it with PostgreSQL, authentication, user profiles, learning levels, and integration with an external quiz API.",
     tech: ["Flask", "PostgreSQL", "Python", "SQLAlchemy", "REST API"],
     mainImage: hootsChallenge,
     secondaryImage: hootsChallenge1,
@@ -72,7 +72,7 @@ const PROJECTS = [
     id: 3,
     title: "AR Treasure Hunt",
     description:
-      "Proof-of-concept AR adventure game that combines geolocation and augmented reality to create an interactive outdoor experience. Players follow a hiking route and collect AR clues along the trail to progress through the adventure. The demo is currently configured for the Stikk Ut trail Retiro in Molde.",
+      "A proof-of-concept web application developed as my bachelor's thesis, exploring how technology can encourage children to be more physically active. The application combines geolocation and augmented reality to turn an outdoor hiking route into an interactive adventure. Players follow a route and discover AR clues along the way to progress through the experience. The prototype is currently configured for the Stikk UT trail at Retiro in Molde.",
     tech: ["JavaScript", "A-Frame", "Web AR", "HTML/CSS"],
     mainImage: treasureHunt,
     secondaryImage: treasureHunt1,
@@ -227,8 +227,8 @@ function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: easeOut }}
             className="text-xl md:text-2xl text-black max-w-2xl mb-12"
           >
-            A junior full-stack developer learning, building, and improving
-            through real-world development projects.
+            Full-Stack Developer building practical solutions and continuously
+            expanding my skills
           </motion.p>
 
           <motion.div
@@ -777,10 +777,10 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Skills />
-        <CoursesAndCertifications />
-        <Projects />
         <Experience />
+        <Skills />
+        <Projects />
+        <CoursesAndCertifications />
         <Contact />
       </main>
       <footer className="py-8 text-center text-sm text-black/70 border-t border-white/5">
