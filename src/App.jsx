@@ -10,10 +10,26 @@ import {
   Layers,
   Zap,
   ExternalLink,
+  Network,
 } from "lucide-react";
-import { SiVuedotjs, SiDotnet, SiPython } from "react-icons/si";
-import { FaDatabase } from "react-icons/fa";
+import {
+  SiVuedotjs,
+  SiDotnet,
+  SiPython,
+  SiCss,
+  SiBootstrap,
+  SiGit,
+  SiReact,
+  SiExpress,
+  SiTailwindcss,
+  SiDocker,
+  SiMongodb,
+  SiKubernetes,
+  SiRedhatopenshift,
+} from "react-icons/si";
+import { FaDatabase, FaAws, FaTasks, FaHtml5, FaNodeJs } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
+import { VscAzure } from "react-icons/vsc";
 import biblioTrack from "./assets/biblioTrack.webp";
 import biblioTrack1 from "./assets/biblioTrack1.webp";
 import hootsChallenge from "./assets/hootsChallenge.webp";
@@ -66,11 +82,51 @@ const PROJECTS = [
 ];
 
 const SKILLS = [
-  { name: "Python", icon: SiPython, color: "#b91c1c" },
-  { name: "SQL (Microsoft SQL Server)", icon: FaDatabase, color: "#b91c1c" },
-  { name: "Vue.js (JavaScript)", icon: SiVuedotjs, color: "#b91c1c" },
-  { name: ".Net (C#, VB.NET)", icon: SiDotnet, color: "#b91c1c" },
-  { name: "Rest API", icon: FiLink, color: "#b91c1c" },
+  {
+    name: "SQL (Microsoft SQL Server)",
+    icon: FaDatabase,
+    category: "Professional Experience",
+  },
+  {
+    name: "Vue.js (JavaScript)",
+    icon: SiVuedotjs,
+    category: "Professional Experience",
+  },
+  {
+    name: ".Net (C#, VB.NET)",
+    icon: SiDotnet,
+    category: "Professional Experience",
+  },
+  { name: "Rest API", icon: FiLink, category: "Professional Experience" },
+  { name: "HTML", icon: FaHtml5, category: "Professional Experience" },
+  { name: "CSS", icon: SiCss, category: "Professional Experience" },
+  { name: "Bootstrap", icon: SiBootstrap, category: "Professional Experience" },
+  { name: "Git", icon: SiGit, category: "Professional Experience" },
+
+  // Course Knowledge
+  { name: "Python", icon: SiPython, category: "Projects & Coursework" },
+  { name: "React", icon: SiReact, category: "Projects & Coursework" },
+  { name: "Node.js", icon: FaNodeJs, category: "Projects & Coursework" },
+  { name: "Express.js", icon: SiExpress, category: "Projects & Coursework" },
+  {
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+    category: "Projects & Coursework",
+  },
+  { name: "NoSQL", icon: SiMongodb, category: "Projects & Coursework" },
+  {
+    name: "Azure App Service",
+    icon: VscAzure,
+    category: "Projects & Coursework",
+  },
+
+  // Familiar With
+  { name: "Kubernetes", icon: SiKubernetes, category: "Familiar With" },
+  { name: "Docker", icon: SiDocker, category: "Familiar With" },
+  { name: "OpenShift", icon: SiRedhatopenshift, category: "Familiar With" },
+  { name: "Microservices", icon: Network, category: "Familiar With" },
+  { name: "DevOps", icon: FaAws, category: "Familiar With" },
+  { name: "Agile", icon: FaTasks, category: "Familiar With" },
 ];
 
 const EXPERIENCE = [
@@ -96,32 +152,16 @@ const COURSES_AND_CERTIFICATIONS = [
     provider: "Coursera",
     completionDate: "2026-08-06",
     link: "https://coursera.org/share/35482948bc8c01ab018f2ee837d35828",
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Node.js",
-      "Express.js",
-      "Git",
-      "GitHub",
-      "NoSQL",
-      "Docker",
-      "Kubernetes",
-      "OpenShift",
-      "Microservices",
-      "Serverless Computing",
-      "CI/CD",
-      "DevOps",
-      "Agile",
-    ],
+    description:
+      "Building cloud-native fullstack applications using JavaScript",
   },
   {
     title: "C# Intermediate: Classes, Interfaces and OOP",
     provider: "Udemy",
     completionDate: "2023-06-23",
     link: "https://www.udemy.com/certificate/UC-14df9e73-1a98-4d83-bb43-e3b1f95a0d23/",
-    skills: ["C#", "Object-Oriented Programming", "Classes", "Interfaces"],
+    description:
+      "Intermediate C# course covering classes, interfaces, and object-oriented programming concepts.",
   },
 ];
 const container = {
@@ -313,6 +353,8 @@ function About() {
 }
 
 function Skills() {
+  const skillCategories = [...new Set(SKILLS.map((skill) => skill.category))];
+
   return (
     <section id="skills" className="py-32 bg-white/5 border-y border-white/5">
       <div className="container mx-auto px-6">
@@ -332,29 +374,47 @@ function Skills() {
             transition={{ delay: 0.1 }}
             className="text-xl text-black"
           >
-            Technologies I work with regularly. Always eager to learn more and
-            expand my toolkit.
+            Technologies I have experience with and have used in real-world
+            projects, coursework, and personal projects.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          {SKILLS.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300"
-            >
-              <skill.icon
-                className="w-12 h-12"
-                style={{ color: skill.color }}
-              />
-              <span className="font-medium text-sm md:text-base">
-                {skill.name}
-              </span>
-            </motion.div>
+        <div className="max-w-5xl mx-auto space-y-12">
+          {skillCategories.map((category, categoryIndex) => (
+            <div key={category} className="space-y-6">
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+                className="text-xl md:text-2xl font-semibold text-red-700"
+              >
+                {category}
+              </motion.h3>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {SKILLS.filter((skill) => skill.category === category).map(
+                  (skill, index) => (
+                    <motion.div
+                      key={`${category}-${skill.name}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.6,
+                        delay: categoryIndex * 0.1 + index * 0.05,
+                      }}
+                      className="flex flex-col items-center gap-2 p-4 rounded-lg glass-panel"
+                    >
+                      <skill.icon className="w-8 h-8 text-red-700" />
+                      <span className="text-sm text-center text-black">
+                        {skill.name}
+                      </span>
+                    </motion.div>
+                  ),
+                )}
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -406,7 +466,7 @@ function CoursesAndCertifications() {
                   </h3>
                   <h4 className="text-lg text-black mb-4">{course.provider}</h4>
                   <p className="text-black leading-relaxed mb-4">
-                    Skills Learned: {course.skills.join(", ")}
+                    Description: {course.description}
                   </p>
                   {course.link && (
                     <a
