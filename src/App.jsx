@@ -148,6 +148,14 @@ const EXPERIENCE = [
 
 const COURSES_AND_CERTIFICATIONS = [
   {
+    title: "Docker and Kubernetes: The Complete Course from Zero to Hero",
+    provider: "Udemy",
+    completionDate: "2026-11-20",
+    link: "https://www.udemy.com/certificate/UC-2fe2fc2d-0384-4077-a5c7-0aa72a33cbc0/",
+    description:
+      "Build, manage, and deploy Docker containers, work with Kubernetes clusters, and understand container orchestration for scalable and efficient application deployment.Intermediate C# course covering classes, interfaces, and object-oriented programming concepts.",
+  },
+  {
     title: "IBM Full-Stack JavaScript Developer",
     provider: "Coursera",
     completionDate: "2026-08-06",
@@ -155,6 +163,7 @@ const COURSES_AND_CERTIFICATIONS = [
     description:
       "Building cloud-native fullstack applications using JavaScript",
   },
+
   {
     title: "C# Intermediate: Classes, Interfaces and OOP",
     provider: "Udemy",
